@@ -46,7 +46,7 @@ shared_cols = [col for col in X_train.columns if col in X_test.columns]
 X_train = X_train[shared_cols]
 X_test = X_test[shared_cols]
 
-# Required forecasting algorithm
+#  forecasting algorithm
 model = DecisionTreeClassifier(
     random_state=42,
     max_depth=8,
@@ -54,8 +54,8 @@ model = DecisionTreeClassifier(
     class_weight="balanced"
 )
 
-# Required fitted model
+# fitted model
 modelFit = model.fit(X_train, y_train)
 
-# Required predictions for all 1000 test observations
+# predictions for all 1000 test observations
 pred = [int(x) for x in modelFit.predict(X_test)]
